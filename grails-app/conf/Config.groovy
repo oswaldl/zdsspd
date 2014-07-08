@@ -122,3 +122,12 @@ log4j = {
 
     info 'com.zy.work.*'
 }
+
+
+cache.headers.presets = [
+        authed_page: false, // No caching for logged in user
+        content: [shared:true, validFor: 3600], // 1hr on content
+        search_results: [validFor: 60, shared: true]
+]
+
+my.conf.xml.file1='/extfile/zdsspd.iml'

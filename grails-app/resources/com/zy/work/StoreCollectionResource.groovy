@@ -27,6 +27,7 @@ class StoreCollectionResource {
     @GET
     Response readAll(@QueryParam('max') Long max,
                      @QueryParam('offset') Long offset) {
+        cache "search_results"
         def params = [:]
         params.max = max
         params.offset = offset

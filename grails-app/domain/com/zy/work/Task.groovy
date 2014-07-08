@@ -34,12 +34,17 @@ class Task {
 
     static belongsTo = [store: Store]
 
+    static mapping = {
+        desc column: 'taskdesc'
+    }
+
     static constraints = {
         //name blank: false, unique: true
         dept nullable:true
         executor nullable:false
         taskType inList: ["检查","验收","整改","判定"]
         desc nullable:true,maxSize: 3000
+
         taskStarter nullable:false
         startTime nullable:false
         planTo nullable:true

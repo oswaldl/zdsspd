@@ -4,6 +4,11 @@ dataSource {
     driverClassName = "org.h2.Driver"
     username = "sa"
     password = ""
+
+//    driverClassName = "com.mysql.jdbc.Driver"
+//    username = "root"
+//    password = ""
+//    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -30,7 +35,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            url = "jdbc:mysql://localhost:3306/zdsspd_db?user=root&password=&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
